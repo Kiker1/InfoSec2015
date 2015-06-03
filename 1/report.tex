@@ -23,7 +23,7 @@
 \begin{flushleft} \large \hangindent=8cm \hangafter=0
 Выполнил: Баринов Д.С. гр. 53501/3 \hrulefill
 
-Приняла: Выглежанина К.Д. \hrulefill
+Приняла: Вылегжанина К.Д. \hrulefill
 \end{flushleft}
 
 		
@@ -75,7 +75,7 @@ TexMaker - это удобная графическая оболочка для 
 Пример формулы и список приведены ниже:
 \begin{enumerate}
 \item Элемент 1
-\item Формула 1: $$ x^2+y=z $$
+\item Формула 1: $$ x^2+y^2=z $$
 \item Вложенный список
 	\begin{itemize}
 	\item Пункт 1
@@ -106,5 +106,73 @@ TexMaker - это удобная графическая оболочка для 
 Пакет позволяет автоматизировать многие задачи набора текста и подготовки статей,
 включая набор текста на нескольких языках, нумерацию разделов и формул, перекрёстные
 ссылки, размещение иллюстраций и таблиц на странице, ведение библиографии и др.
+
+\newpage
+\section{Система контроля версий Git}
+
+\subsection{Цель работы}
+
+Изучить систему контроля версий Git, освоить основные приёмы работы с ней.
+
+\subsection{Ход работы}
+
+\begin{itemize}
+
+\item{Получить содержимое репозитория
+\begin{verbatim}git clone https://github.com/Kiker1/InfoSec2015.git 
+\end{verbatim}}
+
+
+\item{Добавить новую папку и первого файла под контроль версий
+\begin{verbatim}
+mkdir someDir
+cd somedir
+echo test>> somefile.txt
+git add .
+\end{verbatim}}
+
+\item{Зафиксировать изменения в локальном репозитории
+\begin{verbatim}
+git commit -a -m "test" 
+\end{verbatim}}
+
+\item{Внести изменения в файл и просмотреть различия
+\begin{verbatim}
+echo test2 >> somefile.txt
+git diff master:./somefile.txt ./somefile.txt
+\end{verbatim}}
+
+\item{Отменить локальные изменения
+\begin{verbatim}
+git reset HEAD ./somefile.txt
+git checkout ./somefile.txt
+\end{verbatim}}
+
+\item{Внести изменения в файл и просмотреть различия
+\begin{verbatim}
+echo lalalal >> somefile.txt
+git diff master:./somefile.txt ./somefile.txt
+\end{verbatim}}
+
+\item{Зафиксировать изменения в локальном репозитории, зафиксировать изменения в
+центральном репозитории
+\begin{verbatim}
+git commit -a -m "update"
+git push
+\end{verbatim}}
+
+
+\item{Поэкспериментировать с ветками
+\begin{verbatim}
+git branch test
+git checkout test
+git merge test
+\end{verbatim}}
+\end{itemize}
+
+\subsection{Выводы}
+Git -- это распределенная система контроля версий. Это означает, что кроме контроля версий git также предоставляет возможность удобной одновременной работы с репозиторием целой команды участников.
+
+
 
 \end{document}
